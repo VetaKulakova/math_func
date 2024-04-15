@@ -1,0 +1,15 @@
+# функция для решения нелинейного уравнения методом половинного деления
+def bisection_method(a, b, eps):
+    a, b, eps = a, b, eps # границы и точность
+    y1, y2 = f(a), f(b) # функции
+    x = (a + b)/2 
+    y3 = f(x)
+    while b - a > eps:
+        x = (a + b)/2
+        y3 = f(x)
+        if y1*y3 < 0:
+            b = x
+        else: 
+            a = x
+    return x
+
